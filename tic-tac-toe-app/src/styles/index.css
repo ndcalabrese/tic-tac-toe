@@ -11,6 +11,8 @@ body {
     );
     font-size: 14px;
     font-family: "Nokora", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     color: #38ef7d;
     margin: 20px;
     display: flex;
