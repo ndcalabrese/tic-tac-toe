@@ -5,9 +5,11 @@ import Board from './Board';
 const Game = () => {
     
     const [gameState, setGameState] = useState({
-        history: [{
+        history: [
+            {
             squares: Array(9).fill(null),
-        }],
+            }
+        ],
         stepNumber: 0,
         xIsNext: true
     });
@@ -29,9 +31,11 @@ const Game = () => {
         squares[i] = gameState.xIsNext ? "X" : "O";
         // Updates the state object
         setGameState({
-            history: history.concat([{
+            history: history.concat([
+                {
                 squares: squares
-            }]),
+                }
+            ]),
             stepNumber: history.length,
             xIsNext: !gameState.xIsNext
         });
@@ -39,9 +43,10 @@ const Game = () => {
 
     const jumpTo = (step) => {
         setGameState({
+            history: history,
             stepNumber: step,
-            xIsNext: (step % 2) === 0,
-        })
+            xIsNext: (step % 2) === 0
+        });
     }
 
     // Updates status message to show which player is next
@@ -74,7 +79,8 @@ const Game = () => {
             <div className="game-board">
                 <Board 
                     squares={current.squares}
-                    onClick={(i) => handleClick(i)}/>
+                    onClick={i => handleClick(i)}
+                />
             </div>
             <div className="game-info">
                 <div>{status}</div>
