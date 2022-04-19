@@ -60,7 +60,10 @@ const Game = () => {
             : `Go to game start`;
         return (
             <li key={move}>
-                <button onClick={() => jumpTo(move)}>
+                <button 
+                    onClick={() => jumpTo(move)}
+                    className="history-button"
+                >
                     {desc}
                 </button>
             </li>
@@ -75,18 +78,21 @@ const Game = () => {
     }
 
     return (
-        <div className="game">
-            <div className="game-board">
-                <Board 
-                    squares={current.squares}
-                    onClick={i => handleClick(i)}
-                />
+        <>
+            <h1>Tic Tac Toe</h1>
+            <div className="game">
+                <div className="game-board">
+                    <Board 
+                        squares={current.squares}
+                        onClick={i => handleClick(i)}
+                    />
+                </div>
+                <div className="game-info">
+                    <div className="status">{status}</div>
+                    <ol>{moves}</ol>
+                </div>
             </div>
-            <div className="game-info">
-                <div>{status}</div>
-                <ol>{moves}</ol>
-            </div>
-        </div>
+        </>
     );
 }
 
