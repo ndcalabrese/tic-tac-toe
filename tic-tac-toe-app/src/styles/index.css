@@ -60,7 +60,7 @@ li {
     font-size: 40px;
     font-style: normal;
     font-weight: bold;
-    line-height: 47px;
+    line-height: 44px;
     height: 50px;
     margin-right: -1px;
     margin-top: -1px;
@@ -69,7 +69,7 @@ li {
     width: 50px;
 }
 
-.O {
+.O{
     background: #4158d0;
     background: -webkit-linear-gradient(
         to top right,
@@ -132,6 +132,7 @@ li {
         #38ef7d
     );
 }
+
 
 .square:focus {
     outline: none;
